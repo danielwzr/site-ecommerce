@@ -1,0 +1,53 @@
+.produto{
+    background-color: rgb(221, 221, 221);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.produto-detalhes{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 26px;
+}
+
+.produto-detalhes h1{
+    font-weight: normal;
+}
+
+.produto-detalhes .preco{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.produto-frete{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.produto-detalhes a{
+    border-radius: 6px;
+    align-self: flex-start;
+}
+
+#btn-comprar{
+    background-color: rgb(7, 109, 75);
+    color: white;
+    padding: 12px 16px;
+}
+
+#btn-frete{
+    background-color: rgb(49, 49, 49);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 2px;
+}
+
+.produto-detalhes input{
+    padding: 6px 12px;
+    border: none;
+    background-color: rgb(247, 247, 247);
+    font-size: 16px;
+}
