@@ -63,3 +63,6 @@ produtoContainer.innerHTML = `
 </div>`;
 
 //$("a").attr("href", '?fruit=' + 'apple');
+
+const qtdCarrinho = document.getElementById("qtd-carrinho");
+qtdCarrinho.innerText = window.localStorage.getItem("qtdCarrinho");

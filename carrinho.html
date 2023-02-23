@@ -12,6 +12,7 @@
     <link rel="icon" href="img/logo.png">
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carrinho.css">
 </head>
 
 <body>
@@ -31,7 +32,7 @@
                     </li>  -->
                     <li class="menu-icon">
                         <a href="carrinho.html">
-                            <span id="qtd-carrinho">1</span>
+                            <span id="qtd-carrinho"></span>
                             <img src="img/icons/carrinho.svg" alt="Carrinho">
                         </a>
                     </li>
@@ -56,7 +57,29 @@
     </header>
 
     <main>
+        <div class="carrinho container">
+            <div>
+                <h2>Meu carrinho (qntd)</h2>
+                <ul class="carrinho-lista" id="carrinho-lista">
 
+                </ul>
+            </div>
+            <div class="carrinho-resumo">
+                <h2>Resumo</h2>
+                <div>
+                    <span>Subtotal R$ 55,80</span>
+                    <!--  <div>
+                        <span>Cupom</span>                       
+                        <input type="text">
+                    </div>
+-->
+                    <span>Frete R$ 19,90 <br> Rua Major Gote, Patos de Minas - MG <br> 38702-090</span>
+                </div>
+                <h2>Total</h2>
+                <h3>R$ 75,70</h3>
+                <a href="#" id="fazer-pedido">FINALIZAR COMPRA PELO WHATSAPP</a>
+            </div>
+        </div>
     </main>
 
     <footer class="footer-bg">
@@ -87,6 +110,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="carrinho.js"></script>
 </body>
 
 </html>

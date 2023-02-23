@@ -38,7 +38,6 @@ listaDeProdutos.forEach(produto => {
     <a href="produto.html?id=${produto.id}">
         <img src=${produto.imagem} alt="${produto.nome}">
     </a>
-    <button onclick="console.log('${produto.id}')">sadas</button>
         <p>${produto.nome}</p>
         <span>R$ ${produto.preco}</span>
         <br>
@@ -49,6 +48,6 @@ listaDeProdutos.forEach(produto => {
 /* MONTA PRODUTOS HTML */
 
 
-/* ADICIONA AO CARRINHO */
+/* BUSCA QTD DE ITENS NO CARRINHO */
 const qtdCarrinho = document.getElementById("qtd-carrinho");
-console.log(qtdCarrinho)
+qtdCarrinho.innerText = window.localStorage.getItem("qtdCarrinho");
