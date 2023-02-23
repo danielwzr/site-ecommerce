@@ -61,6 +61,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 12px;
 }
 
 .upper-header ul,
@@ -186,4 +187,11 @@ main{
 .footer-wrapper a{
     color: var(--text-secondary-color);
     text-decoration: none;
+}
+
+
+@media screen and (max-width: 800px) {
+    .lower-header-bg{
+        display: none;
+    }
 }

@@ -5,6 +5,11 @@
     gap: 32px;
 }
 
+img{
+    height: 100%;
+    object-fit: cover;
+}
+
 .produto-detalhes{
     display: flex;
     flex-direction: column;
@@ -30,6 +35,10 @@
 .produto-detalhes a{
     border-radius: 6px;
     align-self: flex-start;
+}
+
+.produto-frete input{
+    max-width: 200px;
 }
 
 #btn-comprar{

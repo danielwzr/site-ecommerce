@@ -54,10 +54,10 @@ produtoContainer.innerHTML = `
 
     <div class="produto-frete">
         <span>Calcular o Frete</span>
-        <div>
+        
             <input type="text" placeholder="Digite o seu CEP">
             <a href="#" id="btn-frete">OK</a>
-        </div>
+        
 
     </div>
 </div>`;
