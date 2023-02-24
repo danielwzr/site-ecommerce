@@ -1,20 +1,6 @@
 const btnFazerPedido = document.getElementById("fazer-pedido");
-const carrinho = [
-    {
-        nome: "Switch Purple 10 unidades",
-        preco: 29.90,
-        precoPix: 27,
-        imagem: "img/purple.jpg",
-        id: 1
-    },
-    {
-        nome: "Switch Red 10 unidades",
-        preco: 29.90,
-        precoPix: 27,
-        imagem: "img/red.jpg",
-        id: 2
-    }
-]
+const carrinho = JSON.parse(localStorage.getItem("carrinho"));
+
 var mensagem = `Olá, tenho interesse nos seguintes itens: `;
 carrinho.forEach(item => {
     mensagem = mensagem + "%0a→ " + 1 + " unidade do produto " + item.nome;
@@ -40,16 +26,20 @@ carrinho.forEach(produto => {
         <div>
             <a href="#" id="carrinho-item-menos">-</a>
             <input type="text" value=1>
-            <a href="#" id="carrinho-item-mais">+</a>
-        </div>
+            <a href="#" id="carrinho-item-mais">+</a>      
+        </div>    
     </div>
-</li>`
+    <a href="#" class="btn-remover" onclick="removerDoCarrinho(${produto.id})" value=${produto.id}>Remover</button>
+    </li>`
     ulCarrinho.appendChild(liProduto)
 })
+
+function removerDoCarrinho(id){
+    console.log(carrinho.filter((obj) => obj.id !== id));
+}
 
 
 
 /* ADICIONA AO CARRINHO */
 const qtdCarrinho = document.getElementById("qtd-carrinho");
-window.localStorage.setItem("qtdCarrinho", carrinho.length);
-qtdCarrinho.innerText = carrinho.length;
+qtdCarrinho.innerText = window.localStorage.getItem("qtdCarrinho");

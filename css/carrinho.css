@@ -63,6 +63,14 @@
     border-radius: 6px;
 }
 
+.btn-remover{
+    background-color: brown;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 3px;
+    align-self: center;
+}
+
 @media screen and (max-width: 800px) {
     .carrinho{
         display: flex;

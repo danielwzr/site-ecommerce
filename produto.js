@@ -1,20 +1,20 @@
 const listaDeProdutos = [
     {
-        nome: "Switch Purple 10 unidades",
+        nome: "Switch Purple",
         preco: 29.90,
         precoPix: 27,
         imagem: "img/purple.jpg",
         id: 1
     },
     {
-        nome: "Switch Red 10 unidades",
+        nome: "Switch Red",
         preco: 29.90,
         precoPix: 27,
         imagem: "img/red.jpg",
         id: 2
     },
     {
-        nome: "Switch Blue 10 unidades",
+        nome: "Switch Blue",
         preco: 29.90,
         precoPix: 27,
         imagem: "img/blue.jpg",
@@ -28,13 +28,10 @@ const listaDeProdutos = [
         id: 4
     },    
 ]
-//console.log(window.name)
+
 var id = window.location.href.substring(38);
-console.log(id);
-
-
 const produto = listaDeProdutos.filter(produto => produto.id == id)[0];
-console.log(produto);
+
 
 const produtoContainer = document.getElementById("produto")
 produtoContainer.innerHTML = `
@@ -50,7 +47,7 @@ produtoContainer.innerHTML = `
 
     <span class="pix"><b>R$ ${produto.precoPix}</b> com PIX (-5%)</span>
 
-    <a href="#" id="btn-comprar">COMPRAR AGORA</a>
+    <a href="#" id="btn-comprar">ADICIONAR AO CARRINHO</a>
 
     <div class="produto-frete">
         <span>Calcular o Frete</span>
@@ -62,7 +59,25 @@ produtoContainer.innerHTML = `
     </div>
 </div>`;
 
-//$("a").attr("href", '?fruit=' + 'apple');
-
+const carrinho = JSON.parse(localStorage.getItem("carrinho"));
 const qtdCarrinho = document.getElementById("qtd-carrinho");
+
+const btnComprar = document.getElementById("btn-comprar");
+btnComprar.addEventListener("click", ()=>{
+    console.log(carrinho)
+    console.log(carrinho.includes(id == 1))
+    //carrinho.push(produto);
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    localStorage.setItem("qtdCarrinho", carrinho.length);
+    qtdCarrinho.innerText = window.localStorage.getItem("qtdCarrinho");
+})
+
+
 qtdCarrinho.innerText = window.localStorage.getItem("qtdCarrinho");
+
+
+// PRA PEGAR NO STORAGE
+// JSON.parse(localStorage.getItem("carrinho"));
+
+// PRA COLOCAR NO STORAGE
+// localStorage.setItem("carrinho", JSON.stringify(array));

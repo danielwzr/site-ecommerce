@@ -2,21 +2,21 @@
 const ulProdutos = document.getElementById("produtos-lista");
 const listaDeProdutos = [
     {
-        nome: "Switch Purple 10 unidades",
+        nome: "Switch Purple",
         preco: 29.90,
         precoPix: 27,
         imagem: "img/purple.jpg",
         id: 1
     },
     {
-        nome: "Switch Red 10 unidades",
+        nome: "Switch Red",
         preco: 29.90,
         precoPix: 27,
         imagem: "img/red.jpg",
         id: 2
     },
     {
-        nome: "Switch Blue 10 unidades",
+        nome: "Switch Blue",
         preco: 29.90,
         precoPix: 27,
         imagem: "img/blue.jpg",
