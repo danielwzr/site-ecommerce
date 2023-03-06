@@ -6,7 +6,7 @@ btnFazerPedido.addEventListener("click", () => {
     var mensagem = `Olá, tenho interesse nos seguintes itens: `;
     carrinho.forEach(item => {
         console.log(item)
-        mensagem = mensagem + "%0a→ " + item.value + " unidade do produto " + item.nome;
+        mensagem = mensagem + "%0a→ " + 1 + " unidade do produto " + item.nome;
     })
     window.open("https://api.whatsapp.com/send?phone=3497743681&text=" + mensagem);
 })
@@ -36,15 +36,13 @@ function montaCarrinho(){
         <a href="#" class="btn-remover" onclick="removerDoCarrinho(carrinho,${produto.id})" value=${produto.id}><img src="img/icons/lixeira.svg"></button>`
         ulCarrinho.appendChild(liProduto)
     })
-    console.log(carrinho)
 }  
-
 
 
 // STARTA O CARRINHO
 montaCarrinho(carrinho)
 
-/* ADICIONA AO CARRINHO */
+/* BUSCA QUANTIDADE DE ITENS NO CARRINHO */
 const qtdCarrinho = document.getElementById("qtd-carrinho");
 qtdCarrinho.innerText = window.localStorage.getItem("qtdCarrinho");
 
@@ -54,4 +52,6 @@ function removerDoCarrinho(array, id) {
     ulCarrinho.innerHTML = "";
     montaCarrinho();
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    localStorage.setItem("qtdCarrinho", carrinho.length);  
+    qtdCarrinho.innerText = carrinho.length;
 }
