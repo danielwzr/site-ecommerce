@@ -64,9 +64,7 @@ const qtdCarrinho = document.getElementById("qtd-carrinho");
 
 const btnComprar = document.getElementById("btn-comprar");
 btnComprar.addEventListener("click", ()=>{
-    console.log(carrinho)
-    console.log(carrinho.includes(id == 1))
-    //carrinho.push(produto);
+    carrinho.push(produto);
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
     localStorage.setItem("qtdCarrinho", carrinho.length);
     qtdCarrinho.innerText = window.localStorage.getItem("qtdCarrinho");
