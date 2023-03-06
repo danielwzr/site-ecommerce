@@ -12,7 +12,7 @@ btnFazerPedido.addEventListener("click", () => {
 })
 
 
-function montaCarrinho(){
+function montaCarrinho() {
     carrinho.forEach(produto => {
         const liProduto = document.createElement("li");
         liProduto.className = 'carrinho-item';
@@ -36,7 +36,7 @@ function montaCarrinho(){
         <a href="#" class="btn-remover" onclick="removerDoCarrinho(carrinho,${produto.id})" value=${produto.id}><img src="img/icons/lixeira.svg"></button>`
         ulCarrinho.appendChild(liProduto)
     })
-}  
+}
 
 
 // STARTA O CARRINHO
@@ -52,6 +52,19 @@ function removerDoCarrinho(array, id) {
     ulCarrinho.innerHTML = "";
     montaCarrinho();
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    localStorage.setItem("qtdCarrinho", carrinho.length);  
+    localStorage.setItem("qtdCarrinho", carrinho.length);
     qtdCarrinho.innerText = carrinho.length;
 }
+
+
+
+/* monta resumo do carrinho
+var carrinhoResumo = document.getElementById("carrinho-resumo");
+carrinhoResumo.innerHTML = `                <h2>Resumo</h2>
+                <div>
+                    <span>Subtotal R$ </span>
+                    <span>Frete R$ 19,90 <br> Rua Major Gote, Patos de Minas - MG <br> 38702-090</span>
+                </div>
+                <h2>Total</h2>
+                <h3>R$ 75,70</h3>
+                <a href="#" id="fazer-pedido">FINALIZAR COMPRA PELO WHATSAPP</a>`  */
